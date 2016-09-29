@@ -3,9 +3,12 @@ using System.Collections;
 
 public class ExampleBehavScript : MonoBehaviour {
 	int myInt = 10;
+	private Light myLight;
 	// Use this for initialization
 	void Start () {
 		Debug.Log (MultiplyByTwo(myInt));
+		myLight = gameObject.GetComponent<Light>();
+
 
 	}
 
@@ -24,6 +27,9 @@ public class ExampleBehavScript : MonoBehaviour {
 		}
 		if(Input.GetKeyDown(KeyCode.B)){
 			gameObject.GetComponent<Renderer>().material.color = Color.blue;
+		}
+		if(Input.GetKeyDown(KeyCode.Space)){
+			myLight.enabled = !myLight.enabled;
 		}
 	}
 
