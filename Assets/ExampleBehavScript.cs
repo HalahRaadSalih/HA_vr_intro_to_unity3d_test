@@ -14,6 +14,7 @@ public class ExampleBehavScript : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
+		Debug.Log (Time.deltaTime);
 		Debug.Log (transform.position.y);
 		if(Input.GetKeyDown(KeyCode.R)){
 			gameObject.GetComponent<Renderer>().material.color = Color.red;
@@ -24,5 +25,10 @@ public class ExampleBehavScript : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.B)){
 			gameObject.GetComponent<Renderer>().material.color = Color.blue;
 		}
+	}
+
+	void FixedUpdate(){
+		Debug.Log (Time.deltaTime);
+
 	}
 }
